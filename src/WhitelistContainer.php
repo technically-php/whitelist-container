@@ -6,19 +6,32 @@ namespace Someniatko\WhitelistContainer;
 
 use Psr\Container\ContainerInterface;
 
-abstract class WhitelistContainer implements ContainerInterface
+final class WhitelistContainer implements ContainerInterface
 {
     private ContainerInterface $container;
 
-    final public function __construct(ContainerInterface $container)
-    {
+    /** @var string[] */
+    private array $whitelistedEntries;
+
+    private string $containerName;
+
+    /**
+     * @param string[] $whitelistedEntries
+     */
+    public function __construct(
+        ContainerInterface $container,
+        array $whitelistedEntries,
+        string $containerName = 'whitelist'
+    ) {
         $this->container = $container;
+        $this->whitelistedEntries = $whitelistedEntries;
+        $this->containerName = $containerName;
     }
 
     final public function get(string $id)
     {
         if (! $this->has($id)) {
-            throw new NotFoundException($id . ' not found in "' . $this->getContainerName() . '" container');
+            throw new NotFoundException($id . ' not found in "' . $this->containerName . '" container');
         }
 
         return $this->container->get($id);
@@ -26,16 +39,7 @@ abstract class WhitelistContainer implements ContainerInterface
 
     final public function has(string $id): bool
     {
-        return in_array($id, static::getWhitelistedContainerEntries())
+        return in_array($id, $this->whitelistedEntries, true)
             && $this->container->has($id);
-    }
-
-    /** @return string[] */
-    abstract protected function getWhitelistedContainerEntries(): array;
-
-    /** Override this function in order to get more precise exception message when resolving unwhitelisted entry */
-    protected function getContainerName(): string
-    {
-        return 'whitelist';
     }
 }

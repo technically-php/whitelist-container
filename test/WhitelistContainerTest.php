@@ -22,19 +22,8 @@ final class WhitelistContainerTest extends TestCase
             'b' => 2
         ]);
 
-        $this->whitelistA = new class ($inner) extends WhitelistContainer {
-            protected function getWhitelistedContainerEntries(): array
-            {
-                return [ 'a' ];
-            }
-        };
-
-        $this->whitelistNonexistent = new class ($inner) extends WhitelistContainer {
-            protected function getWhitelistedContainerEntries(): array
-            {
-                return [ 'nonexistent' ];
-            }
-        };
+        $this->whitelistA = new WhitelistContainer($inner, ['a']);
+        $this->whitelistNonexistent = new WhitelistContainer($inner, [ 'nonexistent'] );
     }
 
     public function testInnerHasWhitelisted(): void
