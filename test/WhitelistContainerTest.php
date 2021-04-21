@@ -23,7 +23,7 @@ final class WhitelistContainerTest extends TestCase
         ]);
 
         $this->whitelistA = new WhitelistContainer($inner, ['a']);
-        $this->whitelistNonexistent = new WhitelistContainer($inner, [ 'nonexistent'] );
+        $this->whitelistNonexistent = new WhitelistContainer($inner, [ 'nonexistent']);
     }
 
     public function testInnerHasWhitelisted(): void
