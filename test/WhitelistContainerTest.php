@@ -22,14 +22,14 @@ final class WhitelistContainerTest extends TestCase
             'b' => 2
         ]);
 
-        $this->whitelistA = new class($inner) extends WhitelistContainer {
+        $this->whitelistA = new class ($inner) extends WhitelistContainer {
             protected function getWhitelistedContainerEntries(): array
             {
                 return [ 'a' ];
             }
         };
 
-        $this->whitelistNonexistent = new class($inner) extends WhitelistContainer {
+        $this->whitelistNonexistent = new class ($inner) extends WhitelistContainer {
             protected function getWhitelistedContainerEntries(): array
             {
                 return [ 'nonexistent' ];
