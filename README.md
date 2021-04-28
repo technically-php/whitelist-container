@@ -5,6 +5,7 @@ that wraps any PSR-11 container instance, but provides access only to selected l
 
 Any other entries that are not explicitly whitelisted will be reported as not found.
 
+![Tests](https://github.com/technically-php/whitelist-container/actions/workflows/test.yml/badge.svg)
 
 ## Installation
 
