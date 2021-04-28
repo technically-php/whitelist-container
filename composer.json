@@ -11,6 +11,9 @@
         "psalm/phar": "^4.7",
         "phpwatch/simple-container": "^2.0"
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "autoload": {
         "psr-4": {
             "Technically\\WhitelistContainer\\": "src/"
