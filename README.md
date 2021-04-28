@@ -39,3 +39,7 @@ $whitelistContainer->has(Prohibited::class); // false
 $whitelistContainer->get(Allowed::class); // Allowed instance
 $whitelistContainer->get(Prohibited::class); // @throws NotFoundExceptionInterface
 ```
+
+## Credits
+
+Implemented by [Illya Somov][https://github.com/someniatko].
