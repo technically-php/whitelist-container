@@ -1,5 +1,5 @@
 {
-    "name": "someniatko/whitelist-container",
+    "name": "technically/whitelist-container",
     "license": "MIT",
     "description": "A PSR-11 container, wrapping existing container, but restricting access only to selected list of classes",
     "require": {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Someniatko\\WhitelistContainer\\": "src/"
+            "Technically\\WhitelistContainer\\": "src/"
         }
     },
     "autoload-dev": {
