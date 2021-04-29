@@ -42,4 +42,4 @@ $whitelistContainer->get(Prohibited::class); // @throws NotFoundExceptionInterfa
 
 ## Credits
 
-Implemented by [Illya Somov](https://github.com/someniatko).
+Implemented by [someniatko](https://github.com/someniatko).
