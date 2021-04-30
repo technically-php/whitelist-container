@@ -7,6 +7,7 @@ Any other entries that are not explicitly whitelisted will be reported as not fo
 
 ![Tests](https://github.com/technically-php/whitelist-container/actions/workflows/test.yml/badge.svg)
 
+
 ## Installation
 
 This library requires PHP 7.4 or 8.0.
@@ -39,6 +40,7 @@ $whitelistContainer->has(Prohibited::class); // false
 $whitelistContainer->get(Allowed::class); // Allowed instance
 $whitelistContainer->get(Prohibited::class); // @throws NotFoundExceptionInterface
 ```
+
 
 ## Credits
 
