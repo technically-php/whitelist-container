@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use PHPWatch\SimpleContainer\Container;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
-use Someniatko\WhitelistContainer\WhitelistContainer;
+use Technically\WhitelistContainer\WhitelistContainer;
 
 final class WhitelistContainerTest extends TestCase
 {

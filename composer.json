@@ -1,5 +1,5 @@
 {
-    "name": "someniatko/whitelist-container",
+    "name": "technically/whitelist-container",
     "license": "MIT",
     "description": "A PSR-11 container, wrapping existing container, but restricting access only to selected list of classes",
     "require": {
@@ -11,9 +11,12 @@
         "psalm/phar": "^4.7",
         "phpwatch/simple-container": "^2.0"
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "autoload": {
         "psr-4": {
-            "Someniatko\\WhitelistContainer\\": "src/"
+            "Technically\\WhitelistContainer\\": "src/"
         }
     },
     "autoload-dev": {

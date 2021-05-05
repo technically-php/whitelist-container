@@ -1,14 +1,20 @@
-# someniatko/whitelist-container
+# Technically Whitelist Container
 
-A PSR-11 container, wrapping existing container, but restricting access only to selected list of classes.
+`Technically\WhitelistContainer` is a small PSR-11 container utility, 
+that wraps any PSR-11 container instance, but provides access only to selected list of entries.
+
+Any other entries that are not explicitly whitelisted will be reported as not found.
+
+![Tests](https://github.com/technically-php/whitelist-container/actions/workflows/test.yml/badge.svg)
 
 
 ## Installation
+
 This library requires PHP 7.4 or 8.0.
 You can install it via Composer:
 
 ```shell
-composer install someniatko/whitelist-container
+composer require technically/whitelist-container
 ```
 
 
@@ -20,7 +26,7 @@ composer install someniatko/whitelist-container
 class Allowed {}
 class Prohibited {}
 
-use Someniatko\WhitelistContainer\WhitelistContainer;
+use Technically\WhitelistContainer\WhitelistContainer;
 
 /** @var \Psr\Container\ContainerInterface $innerContainer */
 $whitelistContainer = new WhitelistContainer(
@@ -34,3 +40,8 @@ $whitelistContainer->has(Prohibited::class); // false
 $whitelistContainer->get(Allowed::class); // Allowed instance
 $whitelistContainer->get(Prohibited::class); // @throws NotFoundExceptionInterface
 ```
+
+
+## Credits
+
+Implemented by [someniatko](https://github.com/someniatko).

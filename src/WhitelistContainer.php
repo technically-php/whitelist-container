@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Someniatko\WhitelistContainer;
+namespace Technically\WhitelistContainer;
 
 use Psr\Container\ContainerInterface;
 
