@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Technically\WhitelistContainer;
 
 use Psr\Container\ContainerInterface;
+use Technically\WhitelistContainer\Exceptions;
 
 final class WhitelistContainer implements ContainerInterface
 {
@@ -31,7 +32,7 @@ final class WhitelistContainer implements ContainerInterface
     final public function get(string $id)
     {
         if (! $this->has($id)) {
-            throw new NotFoundException($id . ' not found in "' . $this->containerName . '" container');
+            throw new Exceptions\ServiceNotFound($id . ' not found in "' . $this->containerName . '" container');
         }
 
         return $this->container->get($id);
